@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iyun4/views/widgets/navigation_bar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
@@ -72,8 +73,19 @@ class _LoginScreenState extends State<LoginScreen> {
                     textPinCodeController1.clear();
                   });
                 } else if (pinCode == textPinCodeController1.text) {
-                 
-                  Navigator.pushReplacementNamed(context, "/navigationBar");
+                  Navigator.pushReplacement(context, MaterialPageRoute(
+                    builder: (context) {
+                      return NavigationBars(
+                        onThemeChanged: widget.onThemeChanged,
+                        onBackgroundImageChanged:
+                            widget.onBackgroundImageChanged,
+                        onAppBarColorChanged: widget.onAppBarColorChanged,
+                        onTextFontSize: widget.onTextFontSize,
+                        onTextColor: widget.onTextColor,
+                      );
+                    },
+                  ));
+                  // Navigator.pushReplacementNamed(context, "/navigationBar");
                 }
                 setState(() {});
               },

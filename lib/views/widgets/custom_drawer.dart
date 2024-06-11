@@ -47,24 +47,7 @@ class CustomDrawer extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-              Navigator.pushNamed(context, "/mainScreen");
-
-            },
-            title: Text(
-              "Course",
-              style: TextStyle(
-                fontSize: AppConstants.fontSize,
-                color: AppConstants.textColor,
-              ),
-            ),
-            trailing: const Icon(
-              Icons.keyboard_arrow_right,
-            ),
-          ),
-          ListTile(
-            onTap: () {
               Navigator.pushNamed(context, "/settingsScreen");
-
             },
             title: Text(
               "Sozlamalar",
