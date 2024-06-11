@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:iyun4/utils/app_constants.dart';
-import 'package:iyun4/views/screens/course_screen.dart';
-import 'package:iyun4/views/screens/log_in_screen.dart';
-import 'package:iyun4/views/screens/settings_screen.dart';
-import 'package:iyun4/views/widgets/navigation_bar.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -42,20 +38,7 @@ class CustomDrawer extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (ctx) {
-                    return NavigationBars(
-                      onThemeChanged: onThemeChanged,
-                      onBackgroundImageChanged: onBackgroundImageChanged,
-                      onAppBarColorChanged: onAppBarColorChanged,
-                      onTextFontSize: onTextFontSize,
-                      onTextColor: onTextColor,
-                    );
-                  },
-                ),
-              );
+              Navigator.pushReplacementNamed(context, "/navigationBar");
             },
             title: const Text("Bosh sahifa"),
             trailing: const Icon(
@@ -64,20 +47,8 @@ class CustomDrawer extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (ctx) {
-                    return MainScreen(
-                      onThemeChanged: onThemeChanged,
-                      onBackgroundImageChanged: onBackgroundImageChanged,
-                      onAppBarColorChanged: onAppBarColorChanged,
-                      onTextFontSize: onTextFontSize,
-                      onTextColor: onTextColor,
-                    );
-                  },
-                ),
-              );
+              Navigator.pushNamed(context, "/mainScreen");
+
             },
             title: Text(
               "Course",
@@ -92,20 +63,8 @@ class CustomDrawer extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (ctx) {
-                    return SettingsScreen(
-                      onThemeChanged: onThemeChanged,
-                      onBackgroundImageChanged: onBackgroundImageChanged,
-                      onAppBarColorChanged: onAppBarColorChanged,
-                      onTextFontSize: onTextFontSize,
-                      onTextColor: onTextColor,
-                    );
-                  },
-                ),
-              );
+              Navigator.pushNamed(context, "/settingsScreen");
+
             },
             title: Text(
               "Sozlamalar",
@@ -121,17 +80,7 @@ class CustomDrawer extends StatelessWidget {
           const SizedBox(height: 20),
           ZoomTapAnimation(
             onTap: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(
-                builder: (context) {
-                  return LoginScreen(
-                    onThemeChanged: onThemeChanged,
-                    onBackgroundImageChanged: onBackgroundImageChanged,
-                    onAppBarColorChanged: onAppBarColorChanged,
-                    onTextFontSize: onTextFontSize,
-                    onTextColor: onTextColor,
-                  );
-                },
-              ));
+              Navigator.pushNamed(context, "/logInScreen");
             },
             child: Padding(
               padding: const EdgeInsets.all(20),

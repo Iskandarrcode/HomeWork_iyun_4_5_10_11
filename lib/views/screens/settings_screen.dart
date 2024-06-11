@@ -5,8 +5,6 @@ import 'package:iyun4/views/widgets/custom_drawer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
-import 'pin_code_screen.dart';
-
 class SettingsScreen extends StatefulWidget {
   final ValueChanged<bool> onThemeChanged;
   final ValueChanged<String> onBackgroundImageChanged;
@@ -199,21 +197,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     const SizedBox(height: 20),
                     ZoomTapAnimation(
                       onTap: () {
-                        setState(() {
-                          Navigator.pushReplacement(context, MaterialPageRoute(
-                            builder: (context) {
-                              return PinCodeScreen(
-                                onThemeChanged: widget.onThemeChanged,
-                                onBackgroundImageChanged:
-                                    widget.onBackgroundImageChanged,
-                                onAppBarColorChanged:
-                                    widget.onAppBarColorChanged,
-                                onTextFontSize: widget.onTextFontSize,
-                                onTextColor: widget.onTextColor,
-                              );
-                            },
-                          ));
-                        });
+                        Navigator.pushReplacementNamed(context, "/pinCode");
                       },
                       child: Text(
                         "Add Pin Code",

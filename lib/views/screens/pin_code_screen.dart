@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iyun4/views/screens/log_in_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
@@ -98,18 +97,8 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
               const SizedBox(height: 20),
               TextButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return LoginScreen(
-                        onThemeChanged: widget.onThemeChanged,
-                        onBackgroundImageChanged:
-                            widget.onBackgroundImageChanged,
-                        onAppBarColorChanged: widget.onAppBarColorChanged,
-                        onTextFontSize: widget.onTextFontSize,
-                        onTextColor: widget.onTextColor,
-                      );
-                    },
-                  ));
+                 
+                  Navigator.pushReplacementNamed(context, "/logInScreen");
                 },
                 child: const Text(
                   "Log in",
@@ -135,19 +124,8 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
                   if (errorMessagePinCode1.isEmpty &&
                       errorMessagePinCode2.isEmpty) {
                     savePinCodeI();
-                    // AppConstants.password = textPinCodeController1.text;
-                    Navigator.pushReplacement(context, MaterialPageRoute(
-                      builder: (context) {
-                        return LoginScreen(
-                          onThemeChanged: widget.onThemeChanged,
-                          onBackgroundImageChanged:
-                              widget.onBackgroundImageChanged,
-                          onAppBarColorChanged: widget.onAppBarColorChanged,
-                          onTextFontSize: widget.onTextFontSize,
-                          onTextColor: widget.onTextColor,
-                        );
-                      },
-                    ));
+                    
+                    Navigator.pushNamed(context, "/logInScreen");
                   }
                   setState(() {});
                 },

@@ -32,7 +32,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             height: 200,
             width: 200,
             clipBehavior: Clip.hardEdge,
-            decoration: BoxDecoration(shape: BoxShape.circle),
+            decoration: const BoxDecoration(shape: BoxShape.circle),
             child: Image.network(
               _userInfoViewModel.userInfo.profilePictureUrl,
               fit: BoxFit.cover,
@@ -126,7 +126,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 Navigator.of(context).pop();
                               }
                             },
-                            child: Text('Save'),
+                            child: const Text('Save'),
                           ),
                         ],
                       ),
