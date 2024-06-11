@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iyun4/utils/app_constants.dart';
-import 'package:iyun4/views/screens/course_screen.dart';
+import 'package:iyun4/views/screens/pin_code_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 int countTrue = 0;
@@ -72,20 +72,20 @@ class _MyAppState extends State<MyApp> {
       ),
       darkTheme: ThemeData.dark(),
       themeMode: AppConstants.themeMode,
-      home: MainScreen(
-        onThemeChanged: toggleThemeMode,
-        onBackgroundImageChanged: backgroundImage,
-        onAppBarColorChanged: appBarColor,
-        onTextFontSize: fontSize,
-        onTextColor: textColor,
-      ),
-      // home: PinCodeScreen(
+      // home: MainScreen(
       //   onThemeChanged: toggleThemeMode,
       //   onBackgroundImageChanged: backgroundImage,
       //   onAppBarColorChanged: appBarColor,
       //   onTextFontSize: fontSize,
       //   onTextColor: textColor,
       // ),
+      home: PinCodeScreen(
+        onThemeChanged: toggleThemeMode,
+        onBackgroundImageChanged: backgroundImage,
+        onAppBarColorChanged: appBarColor,
+        onTextFontSize: fontSize,
+        onTextColor: textColor,
+      ),
     );
   }
 }

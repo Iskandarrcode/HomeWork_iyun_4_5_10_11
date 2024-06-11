@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:iyun4/models/lesson_model.dart';
 import 'package:video_player/video_player.dart';
 
@@ -32,83 +33,93 @@ class _LessonItemState extends State<LessonItem> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      clipBehavior: Clip.hardEdge,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        color: Colors.white,
-        border: Border.all(color: Colors.grey.shade200),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 3,
-            offset: Offset(0, 1),
-          )
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
+    return Scaffold(
+      body: Column(
         children: [
-          _controller.value.isInitialized
-              ? Stack(
-                  children: [
-                    Container(
-                      //margin: const EdgeInsets.symmetric(horizontal: 20),
-                      clipBehavior: Clip.hardEdge,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16)),
-                      child: AspectRatio(
-                        aspectRatio: _controller.value.aspectRatio,
-                        child: VideoPlayer(_controller),
-                      ),
-                    ),
-                    Positioned(
-                      bottom: 0,
-                      right: 0,
-                      child: IconButton(
-                        onPressed: () {
-                          setState(() {
-                            _controller.value.isPlaying
-                                ? _controller.pause()
-                                : _controller.play();
-                          });
-                        },
-                        icon: Icon(
-                          _controller.value.isPlaying
-                              ? Icons.pause
-                              : Icons.play_arrow,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ],
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20),
+            clipBehavior: Clip.hardEdge,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              color: Colors.white,
+              border: Border.all(color: Colors.grey.shade200),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 3,
+                  offset: Offset(0, 1),
                 )
-              : const CircularProgressIndicator(),
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Row(
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      widget.lesson.title,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 18,
+                const Gap(400),
+                _controller.value.isInitialized
+                    ? Stack(
+                        children: [
+                          Container(
+                            //margin: const EdgeInsets.symmetric(horizontal: 20),
+                            clipBehavior: Clip.hardEdge,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(16)),
+                            child: AspectRatio(
+                              aspectRatio: _controller.value.aspectRatio,
+                              child: VideoPlayer(_controller),
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 0,
+                            right: 0,
+                            child: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _controller.value.isPlaying
+                                      ? _controller.pause()
+                                      : _controller.play();
+                                });
+                              },
+                              icon: Icon(
+                                _controller.value.isPlaying
+                                    ? Icons.pause
+                                    : Icons.play_arrow,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+                    : const Center(child: CircularProgressIndicator()),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            widget.lesson.title,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18,
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          SizedBox(
+                            width: 260,
+                            child: Text(
+                              widget.lesson.description,
+                              style: const TextStyle(fontSize: 14),
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      widget.lesson.description,
-                      style: TextStyle(fontSize: 14),
-                    ),
-                  ],
-                ),
-                const Spacer(),
+                      const Spacer(),
+                    ],
+                  ),
+                )
               ],
             ),
           )

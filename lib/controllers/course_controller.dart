@@ -2,7 +2,7 @@
 import 'package:iyun4/models/course_model.dart';
 import 'package:iyun4/repositoryes/course_repository.dart';
 
-class CourseViewModel {
+class CourseController {
   final CourseRepository _courseRepository = CourseRepository();
 
   Future<List<CourseModel>> get courseList async {

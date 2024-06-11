@@ -28,7 +28,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final CourseViewModel _courseViewModel = CourseViewModel();
+  final CourseController _courseViewModel = CourseController();
   final bool _isViewStylePressed = false;
 
   @override
@@ -43,7 +43,7 @@ class _MainScreenState extends State<MainScreen> {
             onPressed: () async {
               final response = await Navigator.push(context, MaterialPageRoute(
                 builder: (context) {
-                  return CourseAlertDialog();
+                  return const CourseAlertDialog();
                 },
               ));
 

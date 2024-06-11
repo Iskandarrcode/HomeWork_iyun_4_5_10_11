@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iyun4/utils/app_constants.dart';
+import 'package:iyun4/views/screens/course_screen.dart';
 import 'package:iyun4/views/screens/log_in_screen.dart';
 import 'package:iyun4/views/screens/settings_screen.dart';
 import 'package:iyun4/views/widgets/navigation_bar.dart';
@@ -35,8 +36,7 @@ class CustomDrawer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text("Mehmonxonalar"),
-                Text("MENYU"),
+                Text("Courses Screen"),
               ],
             ),
           ),
@@ -58,6 +58,34 @@ class CustomDrawer extends StatelessWidget {
               );
             },
             title: const Text("Bosh sahifa"),
+            trailing: const Icon(
+              Icons.keyboard_arrow_right,
+            ),
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (ctx) {
+                    return MainScreen(
+                      onThemeChanged: onThemeChanged,
+                      onBackgroundImageChanged: onBackgroundImageChanged,
+                      onAppBarColorChanged: onAppBarColorChanged,
+                      onTextFontSize: onTextFontSize,
+                      onTextColor: onTextColor,
+                    );
+                  },
+                ),
+              );
+            },
+            title: Text(
+              "Course",
+              style: TextStyle(
+                fontSize: AppConstants.fontSize,
+                color: AppConstants.textColor,
+              ),
+            ),
             trailing: const Icon(
               Icons.keyboard_arrow_right,
             ),

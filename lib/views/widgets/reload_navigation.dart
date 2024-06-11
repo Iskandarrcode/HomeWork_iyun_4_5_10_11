@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:iyun4/views/screens/home_screen.dart';
+import 'package:iyun4/views/screens/like_screen.dart';
 import 'package:iyun4/views/screens/profile_screen.dart';
 import 'package:iyun4/views/screens/results_screen.dart';
+import 'package:iyun4/views/screens/savat_screen.dart';
 
 class ReloadNavigationBar extends StatefulWidget {
   final ValueChanged<bool> onThemeChanged;
@@ -39,8 +41,10 @@ class _ReloadNavigationState extends State<ReloadNavigationBar> {
         onTextFontSize: widget.onTextFontSize,
         onTextColor: widget.onTextColor,
       ),
-      ResultScreen(),
-      ProfileScreen(),
+      const ResultScreen(),
+      const ProfileScreen(),
+      const SavatScreen(),
+      const LikeScreen(),
     ];
   }
 
@@ -69,6 +73,14 @@ class _ReloadNavigationState extends State<ReloadNavigationBar> {
               NavigationRailDestination(
                 icon: Icon(Icons.person),
                 label: Text("Profile"),
+              ),
+              NavigationRailDestination(
+                icon: Icon(Icons.favorite),
+                label: Text("Like"),
+              ),
+              NavigationRailDestination(
+                icon: Icon(Icons.shopping_bag),
+                label: Text("Card"),
               ),
             ],
           ),

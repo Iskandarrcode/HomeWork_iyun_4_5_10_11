@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iyun4/utils/app_constants.dart';
-import 'package:iyun4/views/screens/todo_screen.dart';
+import 'package:iyun4/views/screens/course_screen.dart';
 import 'package:iyun4/views/widgets/custom_drawer.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           backgroundColor: AppConstants.appBarColor,
           title: Text(
-            "Bosh Sahifa",
+            "Menu",
             style: TextStyle(
               fontSize: AppConstants.fontSize,
               color: AppConstants.textColor,
@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
           onTextFontSize: widget.onTextFontSize,
           onTextColor: widget.onTextColor,
         ),
-        body: TodoScreen(
+        body: MainScreen(
           onThemeChanged: widget.onThemeChanged,
           onBackgroundImageChanged: widget.onBackgroundImageChanged,
           onAppBarColorChanged: widget.onAppBarColorChanged,

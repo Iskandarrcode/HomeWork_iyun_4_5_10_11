@@ -2,10 +2,11 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:iyun4/models/course_model.dart';
 
-class CourseHttpService {
-  Future<List<CourseModel>> getData() async {
+class SavatHttpServices {
+
+  Future<List<CourseModel>> getDataSavat() async {
     final Uri url = Uri.parse(
-      'https://intern-project-abbca-default-rtdb.firebaseio.com/courses.json',
+      'https://intern-project-abbca-default-rtdb.firebaseio.com/savat.json',
     );
 
     final http.Response response = await http.get(url);
@@ -26,7 +27,7 @@ class CourseHttpService {
     throw Exception('Error: CourseHttpService().getData()');
   }
 
-  Future<CourseModel> addCourse({
+  Future<CourseModel> addCourseSavat({
     required String courseTitle,
     required String courseDescription,
     required String courseImageUrl,
@@ -39,7 +40,7 @@ class CourseHttpService {
       'course-price': coursePrice,
     };
     final Uri url = Uri.parse(
-      'https://intern-project-abbca-default-rtdb.firebaseio.com/courses.json',
+      'https://intern-project-abbca-default-rtdb.firebaseio.com/savat.json',
     );
     final http.Response response = await http.post(
       url,
@@ -50,11 +51,10 @@ class CourseHttpService {
     return CourseModel.fromJson(courseData);
   }
 
-  Future<void> deleteCourse({required String id}) async {
+  Future<void> deleteSavat({required String id}) async {
     final Uri url = Uri.parse(
-      'https://intern-project-abbca-default-rtdb.firebaseio.com/courses/$id.json',
+      'https://intern-project-abbca-default-rtdb.firebaseio.com/savat/$id.json',
     );
     await http.delete(url);
   }
-
 }

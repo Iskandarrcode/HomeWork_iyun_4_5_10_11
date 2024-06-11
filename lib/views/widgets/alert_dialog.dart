@@ -3,14 +3,14 @@ import 'package:iyun4/controllers/course_controller.dart';
 
 // ignore: must_be_immutable
 class CourseAlertDialog extends StatefulWidget {
-  CourseAlertDialog({super.key});
+  const CourseAlertDialog({super.key});
 
   @override
   State<CourseAlertDialog> createState() => _CourseAlertDialogState();
 }
 
 class _CourseAlertDialogState extends State<CourseAlertDialog> {
-  final coursesController = CourseViewModel();
+  final coursesController = CourseController();
 
   final TextEditingController courseTitle = TextEditingController();
   final TextEditingController courseDescription = TextEditingController();
@@ -24,7 +24,7 @@ class _CourseAlertDialogState extends State<CourseAlertDialog> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: AlertDialog(
-        backgroundColor: Color.fromARGB(174, 93, 114, 210),
+        backgroundColor: const Color.fromARGB(174, 93, 114, 210),
         title: const Text("Add Courses"),
         content: Form(
           child: Column(
@@ -78,7 +78,6 @@ class _CourseAlertDialogState extends State<CourseAlertDialog> {
                   return null;
                 },
               ),
-              
               TextFormField(
                 controller: coursePrice,
                 textInputAction: TextInputAction.next,
@@ -109,7 +108,7 @@ class _CourseAlertDialogState extends State<CourseAlertDialog> {
             ),
           ),
           isLoading
-              ? Center(
+              ? const Center(
                   child: CircularProgressIndicator(),
                 )
               : ElevatedButton(
