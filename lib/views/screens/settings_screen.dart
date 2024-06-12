@@ -56,12 +56,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: AppConstants.appBarColor,
           title: Text(
             "Sozlamalar",
             style: TextStyle(
               fontSize: AppConstants.fontSize,
-              color: AppConstants.textColor,
             ),
           ),
         ),
@@ -94,7 +92,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         "Tungi holat",
                         style: TextStyle(
                           fontSize: AppConstants.fontSize,
-                          color: AppConstants.textColor,
                         ),
                       ),
                     ),
@@ -115,7 +112,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           "Image Link",
                           style: TextStyle(
                             fontSize: AppConstants.fontSize,
-                            color: AppConstants.textColor,
                           ),
                         ),
                       ),
@@ -140,7 +136,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             "Change",
                             style: TextStyle(
                               fontSize: AppConstants.fontSize,
-                              color: AppConstants.textColor,
                             ),
                           ),
                         ),
@@ -157,7 +152,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 'Pick a color!',
                                 style: TextStyle(
                                   fontSize: AppConstants.fontSize,
-                                  color: AppConstants.textColor,
                                 ),
                               ),
                               content: SingleChildScrollView(
@@ -190,7 +184,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         "Edit AppBar Color",
                         style: TextStyle(
                           fontSize: AppConstants.fontSize,
-                          color: AppConstants.textColor,
                         ),
                       ),
                     ),
@@ -203,7 +196,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         "Add Pin Code",
                         style: TextStyle(
                           fontSize: AppConstants.fontSize,
-                          color: AppConstants.textColor,
                         ),
                       ),
                     ),

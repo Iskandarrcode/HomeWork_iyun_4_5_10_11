@@ -47,13 +47,6 @@ class _TodoScreenState extends State<TodoScreen> {
             ),
           ],
         ),
-        // drawer: CustomDrawer(
-        //   onThemeChanged: widget.onThemeChanged,
-        //   onBackgroundImageChanged: widget.onBackgroundImageChanged,
-        //   onAppBarColorChanged: widget.onAppBarColorChanged,
-        //   onTextFontSize: widget.onTextFontSize,
-        //   onTextColor: widget.onTextColor,
-        // ),
         body: Column(
           children: [
             Expanded(
@@ -85,7 +78,7 @@ class _TodoScreenState extends State<TodoScreen> {
                         setState(() {}); // Ensure the screen updates
                       }
                     },
-                    dateTime: toDoControllerr.list[index].dates,
+                    dateTime: toDoControllerr.list[index].dates.toString(),
                   );
                 },
               ),

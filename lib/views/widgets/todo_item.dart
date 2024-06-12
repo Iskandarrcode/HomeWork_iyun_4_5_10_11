@@ -5,7 +5,7 @@ bool isChecked = false;
 
 class TodoItem extends StatefulWidget {
   final String title;
-  final DateTime dateTime;
+  final String dateTime;
   final Function() onDelete;
   final Function() onEdit;
 

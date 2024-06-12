@@ -70,9 +70,14 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.amber,
+        buttonTheme: const ButtonThemeData(buttonColor: Colors.blue),
+        colorSchemeSeed: Colors.blue,
+        elevatedButtonTheme: const ElevatedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: WidgetStatePropertyAll(Colors.blue),
+          ),
         ),
+        // ignore: prefer_const_constructors
       ),
       darkTheme: ThemeData.dark(),
       themeMode: AppConstants.themeMode,

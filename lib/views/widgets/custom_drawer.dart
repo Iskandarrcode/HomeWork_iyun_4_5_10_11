@@ -24,11 +24,9 @@ class CustomDrawer extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          DrawerHeader(
-            decoration: BoxDecoration(
-              color: AppConstants.appBarColor,
-            ),
-            child: const Column(
+          const DrawerHeader(
+            decoration: BoxDecoration(),
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -53,7 +51,6 @@ class CustomDrawer extends StatelessWidget {
               "Sozlamalar",
               style: TextStyle(
                 fontSize: AppConstants.fontSize,
-                color: AppConstants.textColor,
               ),
             ),
             trailing: const Icon(
@@ -71,7 +68,6 @@ class CustomDrawer extends StatelessWidget {
                 "Exit",
                 style: TextStyle(
                   fontSize: AppConstants.fontSize,
-                  color: AppConstants.textColor,
                 ),
               ),
             ),

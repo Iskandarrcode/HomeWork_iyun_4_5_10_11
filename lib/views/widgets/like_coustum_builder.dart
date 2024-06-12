@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:iyun4/controllers/savat_controller.dart';
 import 'package:iyun4/models/course_model.dart';
 import 'package:iyun4/views/screens/like_screen.dart';
-import 'package:iyun4/views/screens/savat_screen.dart';
 
 class LikeCostumBuilder extends StatefulWidget {
   final bool isViewStylePressed;
