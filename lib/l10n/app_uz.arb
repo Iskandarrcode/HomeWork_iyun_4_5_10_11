@@ -1,0 +1,23 @@
+{
+  "todos": "Vazifalar",
+  "changeViewStyle": "Ko'rinish uslubini o'zgartirish",
+  "notes": "Eslatmalar",
+  "main": "Asosiy",
+  "results": "Natijalar",
+  "doneTodo": "Bajarilgan vazifalar",
+  "undonetodos": "Bajarilmagan vazifalar",
+  "fav": "Sevimlilar",
+  "cart": "Savatcha",
+  "totalPrice": "Umumiy narx",
+  "mainPage": "Asosiy sahifa",
+  "settings": "Sozlamalar",
+  "adminPage": "Admin sahifa",
+  "logOut": "Chiqish",
+  "night": "Tungi rejim",
+  "write": "Rasm URL manzilini yozing",
+  "color": "Rangni o'zgartirish",
+  "password": "Parolni o'zgartirish",
+  "style": "Matn uslubini o'zgartirish",
+  "save": "Saqlash",
+  "hotels": "Mehmonxonalar"
+}
